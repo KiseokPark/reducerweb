@@ -1,6 +1,21 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import App from './components/App';
+import reducers from './reducers';
+import {createStore} from 'redux';
+import * as actions from './actions';
+
+//reduce 를 받아오는 스토어
+const store = createStore(reducers);
+
+console.log(store.getState());
+
+store.subscribe(()=>console.log(store.getState()));
+
+store.dispatch(actions.increment());
+store.dispatch(actions.increment());
+store.dispatch(actions.decrement());
+store.dispatch(actions.setColor([200,200,200]));
 
 
 ReactDOM.render(<App />, document.getElementById('root'));

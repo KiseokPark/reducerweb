@@ -2,12 +2,12 @@
 // import reactDOM from 'react-dom';
 // import App from './components/App';
 
-import {combinReducers} from 'redux';
+import {combineReducers} from 'redux';
 import counter from './counter';
 import ui from './ui';
 import { deflate } from 'zlib';
 
-const reducers = combinReducers ({
+const reducers = combineReducers ({
     counter, ui
 
 });
